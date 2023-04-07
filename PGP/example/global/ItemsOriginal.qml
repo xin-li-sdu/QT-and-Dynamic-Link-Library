@@ -21,73 +21,43 @@ FluObject{
         title:"邮件加密&签名"
         icon:FluentIcons.CheckboxComposite
         onTap:{
-            navigationView.push("qrc:/T_TextBox.qml")
+            navigationView.push("qrc:/page/enc.qml")
         }
 
     }
 
-    FluPaneItem
+    FluPaneItemExpander
     {
         title:"邮件解密&认证"
-        icon:FluentIcons.GridView   
-        onTap:{
-
-            navigationView.push("qrc:/T_Home1.qml")
+        icon:FluentIcons.GridView
+        FluPaneItem
+        {
+            title:"解密"
+            onTap:
+            {
+            navigationView.push("qrc:/page/dec.qml")
             }
-
-
+           }
+        FluPaneItem
+        {
+            title:"认证"
+            onTap:
+            {
+            navigationView.push("qrc:/page/dec.qml")
+            }
+           }
     }
 
 
-    FluPaneItemExpander
+    FluPaneItem
    {
         title:"用户注册"
         icon:FluentIcons.SurfaceHub
+        onTap:{
 
-        FluPaneItem{
-            title:"InfoBar"
-            image:"qrc:/res/image/control/InfoBar.png"
-            recentlyUpdated:true
-            desc:"An inline message to display app-wide statuschange information."
-            onTap:{
-                navigationView.push("qrc:/T_InfoBar.qml")
+            navigationView.push("qrc:/page/LoginPage.qml")
             }
-        }
 
-        FluPaneItem{
-            title:"Progress"
-            onTap:{
-                navigationView.push("qrc:/T_Progress.qml")
-            }
-        }
-
-        FluPaneItem{
-            title:"Badge"
-            onTap:{
-                navigationView.push("qrc:/T_Badge.qml")
-            }
-        }
-
-        FluPaneItem{
-            title:"Rectangle"
-            onTap:{
-                navigationView.push("qrc:/T_Rectangle.qml")
-            }
-        }
-
-        FluPaneItem{
-            title:"Carousel"
-            onTap:{
-                navigationView.push("qrc:/T_Carousel.qml")
-            }
-        }
-
-        FluPaneItem{
-            title:"Expander"
-            onTap:{
-                navigationView.push("qrc:/T_Expander.qml")
-            }
-        }
 
     }
 

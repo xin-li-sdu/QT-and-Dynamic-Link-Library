@@ -3,10 +3,12 @@ CONFIG += c++17
 DEFINES += QT_DEPRECATED_WARNINGS QT_NO_WARNING_OUTPUT
 
 HEADERS += \
-    ChatController.h
+    ChatController.h \
+    abc.h
 
 SOURCES += \
         ChatController.cpp \
+        abc.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -39,6 +41,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 mac: {
     QMAKE_INFO_PLIST =
 }
-
+include($$PWD/gsl/gsl.pri)
 DISTFILES += \
     gsl/gsl.pri

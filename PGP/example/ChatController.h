@@ -1,5 +1,5 @@
-﻿#ifndef CHATCONTROLLER_H
-#define CHATCONTROLLER_H
+#ifndef A_H
+#define A_H
 
 #include <QObject>
 #include <QNetworkAccessManager>
@@ -10,7 +10,9 @@
 #include <QGuiApplication>
 #include <QClipboard>
 #include <QByteArray>
+#include <QString>
 #include <QFile>
+#include<cstdio>
 #include "stdafx.h"
 
 class ChatController : public QObject
@@ -21,10 +23,16 @@ class ChatController : public QObject
 public:
     explicit ChatController(QObject *parent = nullptr);
 
-    Q_INVOKABLE QString sendMessage();
+    Q_INVOKABLE void sendMessage(const QString& text,const QString& text_code);
+    Q_INVOKABLE void clipText(const QString& text);
+private:
+    QJsonObject createMessage(const QString& role,const QString& content);
 
 private:
-    int a=2;
+    QNetworkAccessManager* networkManager;
+    QJsonArray messages;
+    QString baseKey = "c2stbXgxWm5MQkZ5TzhNYzNmRWl6eDZUM0JsYmtGSnNBWjNiakJjSXB6WGN3QW9KSk11";
 };
 
-#endif // CHATCONTROLLER_H
+#endif // A_H
+

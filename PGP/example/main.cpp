@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<ChatController>("Controller",1,0,"ChatController");//加载的c++文件
+    qmlRegisterType<ChatController>("Controller",1,0,"ChatController");//加载的c++文件!!!
 
     QMapIterator<QString, QVariant> iterator(properties());
     while (iterator.hasNext()) {
